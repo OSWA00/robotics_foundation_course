@@ -34,4 +34,39 @@ rqt_graph # Show ros graph visualy
 --------------------------------
 Names, namespaces and remapping
 
+# Cameras remapping example
+./image_view image:= right/image
 
+# Pushing node into namespace
+./camera __ns:=right
+
+#! Names of nodes should be unique
+./talker __name:=talker1
+./talker __name:=talker2
+
+ROS topics can be remapped quickly and easily on the command line
+
+-------------------------------------
+Automate commands with roslaunch
+
+roslaunch PACKAGE LAUNCH_FILE
+
+Launch files are XML files and have a .launch suffix
+# Example talker_listener
+
+<launch>
+    <node name="talker"
+    pkg="rospy_tutorials"
+    type="talker.py"
+    output="screen" />
+    <node name="listener"
+    pkg="rospy_tutorials"
+    type="listener.py"
+    output="screen" /> # Log is better than print to screen
+</launch>
+
+# Hello world Example
+roslaunch rospy_tutorials talker_listener.launch
+
+# roslaunch creates a roscore instation but it is better
+to have one on other terminal
