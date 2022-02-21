@@ -6,7 +6,7 @@ cd workspacename/src
 catkin_init_workspace
 
 cd workspacename
-catkinmake
+catkin_make
 
 source devel/setup.bash
 --------------------------------
