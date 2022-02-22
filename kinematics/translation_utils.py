@@ -1,4 +1,4 @@
-from math import sin, cos, radians
+from math import sin, cos
 import numpy as np
 
 def translate_p(p_vector):
