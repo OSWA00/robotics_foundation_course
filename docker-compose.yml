@@ -1,0 +1,10 @@
+services:
+  kinematics:
+    container_name: kinematics
+    build:
+      context: ./kinematics
+
+    volumes:
+    - ./kinematics:/home/user/src
+    stdin_open: true
+    tty: true
