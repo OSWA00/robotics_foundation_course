@@ -8,3 +8,13 @@ services:
     - ./kinematics:/home/user/src
     stdin_open: true
     tty: true
+
+  robot_control:
+    container_name: robot_control
+    build:
+      context: ./robot_control
+
+    volumes:
+    - ./robot_control:/home/user/src
+    stdin_open: true
+    tty: true
